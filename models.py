@@ -7,7 +7,8 @@ from database import Base
 
 class User(Base):
     __tablename__ = 'user'
-    id =
-    name =
-    login =
-    password =
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    login = Column(String, unique=True, nullable=False)
+    password = Column(String, nullable=False)
+    is_conflict = Column(Boolean, default=False)
